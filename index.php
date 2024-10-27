@@ -91,7 +91,7 @@ $knowledgeCollections[] = (new KnowledgeCollection('programming_language', 'Prog
 Svelte sounds like fun.
 Might want to brush up on my React.
 */
-$knowledgeCollections[] = (new KnowledgeCollection('lib', 'Frameworks, Libraries, and everything in between'))
+$knowledgeCollections[] = (new KnowledgeCollection('lib', 'Frameworks, libraries, and everything in between'))
     ->push('Löve 2D', Knowledge::LEVEL_BEGINNER, [
         [2019, 2020],
     ])
@@ -119,6 +119,7 @@ $knowledgeCollections[] = (new KnowledgeCollection('lib', 'Frameworks, Libraries
     ])
     ->push('Hybrids', Knowledge::LEVEL_PROFICIENT, [
         [2022.85, 2023.15],
+        [dateToYearFloat('2024-10-27')],
     ])
     ->push('Node.js', Knowledge::LEVEL_BEGINNER, [
         [2023.5, 2023.8],
@@ -178,6 +179,9 @@ $knowledgeCollections[] = (new KnowledgeCollection('tool', 'Tools and other Soft
     ])
     ->push('KVM', Knowledge::LEVEL_PROFICIENT, [
         [2022.85],
+    ])
+    ->push('FreeCAD', Knowledge::LEVEL_BEGINNER, [
+        [dateToYearFloat('2023-07-06')],
     ])
 ;
 

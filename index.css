@@ -105,26 +105,6 @@ p {
     border-bottom-right-radius: 0;
 }
 
-.timespan.current::after {
-    content: '\00a0';
-    display: inline-block;
-    position: absolute;
-    border-radius: 0;
-    left: calc(100%);
-    top: 0;
-    height: 1em;
-    width: 1em;
-    opacity: 50%;
-    clip-path: polygon(
-        0% 0%,
-        0% 100%,
-        50% 100%,
-        100% 75%,
-        100% 25%,
-        50% 0%
-    );
-}
-
 .timespan.level-basic, .timespan.level-basic::after {
     background-color: #848484;
 }
@@ -170,4 +150,32 @@ p {
 .timespan.level-expert::after {
     background: repeating-linear-gradient(-45deg, #ad58ec 0%, #e7449d 35%, #e7449d 50%, #bd36e4 70%, #ad58ec 90%);
     animation-timing-function: linear;
+}
+
+@media only screen and (max-width: 600px) {
+    .timeline-container {
+        overflow: hidden;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    .timespan.current::after {
+        content: '\00a0';
+        display: inline-block;
+        position: absolute;
+        border-radius: 0;
+        left: calc(100%);
+        top: 0;
+        height: 1em;
+        width: 1em;
+        opacity: 50%;
+        clip-path: polygon(
+                0% 0%,
+                0% 100%,
+                50% 100%,
+                100% 75%,
+                100% 25%,
+                50% 0%
+        );
+    }
 }
