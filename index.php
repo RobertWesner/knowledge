@@ -85,7 +85,7 @@ $knowledgeCollections[] = (new KnowledgeCollection('programming_language', 'Prog
         [2024],
     ])
     ->push('Rust', Knowledge::LEVEL_BASIC, [
-        [dateToYearFloat('2024-10-17')],
+        [dateToYearFloat('2024-10-17'), dateToYearFloat('2024-10-19')],
     ])
 ;
 
