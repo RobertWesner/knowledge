@@ -43,19 +43,20 @@ Interested in:
 
     Personal hell:
         - COBOL
-        - Furthering the basic knowledge of writing 32bit "bootloader" programs with NASM
 */
 $knowledgeCollections[] = (new KnowledgeCollection('programming_language', 'Programming Languages'))
     ->push('Visual Basic .NET', Knowledge::LEVEL_BASIC, [
         [2014, 2015.5],
     ])
-    ->push('Java', Knowledge::LEVEL_BASIC, [
+    ->push('Java', Knowledge::LEVEL_BEGINNER, [
         [2018.2, 2018.8],
         [2019.6, 2019.7],
+        [dateToYearFloat('2024-12-13')],
     ])
     ->push('C++', Knowledge::LEVEL_BEGINNER, [
         [2019, 2019.5],
         [2020, 2021.5],
+        [dateToYearFloat('2024-10-30')],
     ])
     ->push('Lua', Knowledge::LEVEL_BEGINNER, [
         [2019, 2020.75],
@@ -75,8 +76,9 @@ $knowledgeCollections[] = (new KnowledgeCollection('programming_language', 'Prog
         [2020],
     ])
     ->push('NASM - x86 Assembly', Knowledge::LEVEL_BASIC, [
-        [2020.2, 2021],
-        [2023, 2024],
+        [2020.2, 2020.3],
+        [2023.1, 2023.2],
+        [dateToYearFloat('2024-10-30'), dateToYearFloat('2024-12-07')],
     ]) // on and off, not sure of the range... it's guesstimated
     ->push('Python', Knowledge::LEVEL_BEGINNER, [
         [2020.4, 2021.5],
@@ -187,7 +189,7 @@ $knowledgeCollections[] = (new KnowledgeCollection('tool', 'Tools and other Soft
 
 $knowledgeCollections[] = (new KnowledgeCollection('os', 'Operating Systems'))
     ->push('Windows', Knowledge::LEVEL_BEGINNER, [
-        [2010, 2019.8],
+        [2013, 2019.8],
     ])
     ->push('Windows 10 VFIO Gaming', Knowledge::LEVEL_BEGINNER, [
         [2022.85, dateToYearFloat('2024-10-15')],
@@ -196,7 +198,7 @@ $knowledgeCollections[] = (new KnowledgeCollection('os', 'Operating Systems'))
         [dateToYearFloat('2024-10-15')],
     ])
     ->push('Linux Mint Cinnamon', Knowledge::LEVEL_PROFICIENT, [
-        [2019.5],
+        [2019.5, dateToYearFloat('2024-12-02')],
     ])
     ->push('Ubuntu Server', Knowledge::LEVEL_PROFICIENT, [
         [2019.6],
@@ -215,6 +217,9 @@ $knowledgeCollections[] = (new KnowledgeCollection('os', 'Operating Systems'))
     ])
     ->push('EndeavourOS', Knowledge::LEVEL_PROFICIENT, [
         [2023.5],
+    ])
+    ->push('Kubuntu', Knowledge::LEVEL_PROFICIENT, [
+        [dateToYearFloat('2024-12-02')],
     ])
 ;
 
@@ -240,7 +245,7 @@ ob_start();
                 <div class="timeline-container">
                     <h2><?= $collection->getName() ?></h2>
                     <?php /* Not my actual birthdate if anyone asks */ ?>
-                    <div class="timeline" style="--min: 2008; --max: <?= $now ?>">
+                    <div class="timeline" style="--min: 2013; --max: <?= $now ?>">
                         <?php foreach ($collection->getAll() as $knowledge): ?>
                             <div class="timespan-container">
                                 <?php foreach ($knowledge->getRanges() as $range): ?>
