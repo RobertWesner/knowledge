@@ -27,9 +27,6 @@ Interested in:
         - Elixir
         - Haskell
 
-    Alternative web development:
-        - Ruby (Rails; or Glimmer for Desktop!)
-
     Compiled general purpose:
         - Go
         - Zig (the "better" C)?
@@ -82,10 +79,13 @@ $knowledgeCollections[] = (new KnowledgeCollection('programming_language', 'Prog
     ]) // on and off, not sure of the range... it's guesstimated
     ->push('Python', Knowledge::LEVEL_BEGINNER, [
         [2020.4, 2021.5],
-        [2024],
+        [2024, dateToYearFloat('2024-03-26')],
     ])
     ->push('Rust', Knowledge::LEVEL_BASIC, [
         [dateToYearFloat('2024-10-17'), dateToYearFloat('2024-10-19')],
+    ])
+    ->push('Ruby', Knowledge::LEVEL_BEGINNER, [
+        [dateToYearFloat('2024-12-20')],
     ])
 ;
 
