@@ -7,20 +7,16 @@ function dateToYearFloat(string $date): float
     $timestamp = strtotime($date);
 
     return (float)date('Y', $timestamp)
-        + (float)date('n', $timestamp) / 12;
+        + ((float)date('n', $timestamp) - 1) / 12;
 }
 
-$now = (float)date('Y') + (float)date('n') / 12;
+$now = (float)date('Y') + ((float)date('n') - 1) / 12;
 $knowledgeCollections = [];
 
 /*
 THE "ROADMAP" (aka. things that might be fun to learn and possibly useful)
 
 Interested in:
-
-    Mobile applications:
-        - Kotlin (it's java, but actually good, probably)
-        - Dart (Flutter) - but most likely Kotlin
 
     Functional programming without a clear project goal:
         - Erlang
@@ -32,7 +28,7 @@ Interested in:
         - Zig (the "better" C)?
 
     Desktop:
-        - Kotlin (Compose)
+        - Kotlin
 
     WebAssembly:
         - Rust (again)
@@ -87,6 +83,9 @@ $knowledgeCollections[] = (new KnowledgeCollection('programming_language', 'Prog
     ->push('Ruby', Knowledge::LEVEL_BEGINNER, [
         [dateToYearFloat('2024-12-20')],
     ])
+    ->push('Kotlin', Knowledge::LEVEL_BASIC, [
+        [dateToYearFloat('2024-12-30')],
+    ])
 ;
 
 /*
@@ -129,11 +128,11 @@ $knowledgeCollections[] = (new KnowledgeCollection('lib', 'Frameworks, libraries
     ])
     ->push('Express', Knowledge::LEVEL_BEGINNER, [
         [2023.5, 2023.8],
-        [2024.7],
+        [2024.7, 2024.9],
     ])
     ->push('EJS', Knowledge::LEVEL_BEGINNER, [
         [2023.5, 2023.8],
-        [2024.7],
+        [2024.7, 2024.9],
     ])
     ->push('Laravel', Knowledge::LEVEL_BEGINNER, [
         [2024.55],
@@ -184,6 +183,9 @@ $knowledgeCollections[] = (new KnowledgeCollection('tool', 'Tools and other Soft
     ])
     ->push('FreeCAD', Knowledge::LEVEL_BEGINNER, [
         [dateToYearFloat('2023-07-06')],
+    ])
+    ->push('Gradle', Knowledge::LEVEL_BASIC, [
+        [dateToYearFloat('2024-12-30')],
     ])
 ;
 
@@ -244,7 +246,7 @@ ob_start();
             <?php foreach ($knowledgeCollections as $collection): ?>
                 <div class="timeline-container">
                     <h2><?= $collection->getName() ?></h2>
-                    <?php /* Not my actual birthdate if anyone asks */ ?>
+                    <?php /* Not my actual birthdate in case anyone asks */ ?>
                     <div class="timeline" style="--min: 2013; --max: <?= $now ?>">
                         <?php foreach ($collection->getAll() as $knowledge): ?>
                             <div class="timespan-container">
