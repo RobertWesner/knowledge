@@ -50,6 +50,7 @@ p {
 }
 
 .timeline img {
+    z-index: 10;
     height: 2em;
     font-size: 1rem;
     position: absolute;
