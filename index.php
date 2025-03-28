@@ -83,7 +83,7 @@ $knowledgeCollections[] = (new KnowledgeCollection('programming_language', 'Prog
     ->push('Kotlin', Knowledge::LEVEL_BASIC, [
         [dateToYearFloat('2024-12-30')],
     ])
-    ->push('Go', Knowledge::LEVEL_BASIC, [
+    ->push('Go', Knowledge::LEVEL_PROFICIENT, [
         [dateToYearFloat('2025-03-07')],
     ]);
 
@@ -135,6 +135,9 @@ $knowledgeCollections[] = (new KnowledgeCollection('lib', 'Frameworks, libraries
     ])
     ->push('NativePHP', Knowledge::LEVEL_PROFICIENT, [
         [2024.55],
+    ])
+    ->push('Gin', Knowledge::LEVEL_BASIC, [
+        [dateToYearFloat('2025-03-28')],
     ]);
 
 $knowledgeCollections[] = (new KnowledgeCollection('ide', 'IDEs'))
