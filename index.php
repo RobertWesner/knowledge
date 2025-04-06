@@ -78,10 +78,10 @@ $knowledgeCollections[] = (new KnowledgeCollection('programming_language', 'Prog
         [dateToYearFloat('2024-10-17'), dateToYearFloat('2024-10-19')],
     ])
     ->push('Ruby', Knowledge::LEVEL_BEGINNER, [
-        [dateToYearFloat('2024-12-20')],
+        [dateToYearFloat('2024-12-20'), dateToYearFloat('2025-03-02')],
     ])
     ->push('Kotlin', Knowledge::LEVEL_BASIC, [
-        [dateToYearFloat('2024-12-30')],
+        [dateToYearFloat('2024-12-30'), dateToYearFloat('2024-12-30')],
     ])
     ->push('Go', Knowledge::LEVEL_PROFICIENT, [
         [dateToYearFloat('2025-03-07')],
@@ -110,6 +110,7 @@ $knowledgeCollections[] = (new KnowledgeCollection('lib', 'Frameworks, libraries
     ])
     ->push('React', Knowledge::LEVEL_BEGINNER, [
         [2021.2, 2021.85],
+        [dateToYearFloat('2025-04-05')]
     ])
     ->push('MongoDB', Knowledge::LEVEL_BEGINNER, [
         [2022.2, 2022.4],
@@ -119,16 +120,16 @@ $knowledgeCollections[] = (new KnowledgeCollection('lib', 'Frameworks, libraries
         [dateToYearFloat('2024-10-27')],
     ])
     ->push('Node.js', Knowledge::LEVEL_BEGINNER, [
-        [2023.5, 2023.8],
-        [2024.7],
+        [2023.5, 2023.6],
+        [2024.7, 2024.8],
     ])
     ->push('Express', Knowledge::LEVEL_BEGINNER, [
-        [2023.5, 2023.8],
-        [2024.7, 2024.9],
+        [2023.5, 2023.6],
+        [2024.7, 2024.8],
     ])
     ->push('EJS', Knowledge::LEVEL_BEGINNER, [
-        [2023.5, 2023.8],
-        [2024.7, 2024.9],
+        [2023.5, 2023.6],
+        [2024.7, 2024.8],
     ])
     ->push('Laravel', Knowledge::LEVEL_BEGINNER, [
         [2024.55, 2024.75],
@@ -136,7 +137,7 @@ $knowledgeCollections[] = (new KnowledgeCollection('lib', 'Frameworks, libraries
     ->push('NativePHP', Knowledge::LEVEL_PROFICIENT, [
         [2024.55],
     ])
-    ->push('Gin', Knowledge::LEVEL_BASIC, [
+    ->push('Gin', Knowledge::LEVEL_BEGINNER, [
         [dateToYearFloat('2025-03-28')],
     ]);
 
@@ -176,7 +177,7 @@ $knowledgeCollections[] = (new KnowledgeCollection('tool', 'Tools and other Soft
         [dateToYearFloat('2023-07-06'), 2024.5],
     ])
     ->push('Gradle', Knowledge::LEVEL_BASIC, [
-        [dateToYearFloat('2024-12-30')],
+        [dateToYearFloat('2024-12-30'), dateToYearFloat('2024-12-30')],
     ]);
 
 $knowledgeCollections[] = (new KnowledgeCollection('os', 'Operating Systems'))
