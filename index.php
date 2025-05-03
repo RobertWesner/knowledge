@@ -137,6 +137,9 @@ $knowledgeCollections[] = (new KnowledgeCollection('lib', 'Frameworks, libraries
     ->push('NativePHP', Knowledge::LEVEL_PROFICIENT, [
         [2024.55],
     ])
+    ->push('Spring', Knowledge::LEVEL_BEGINNER, [
+        [dateToYearFloat('2024-12-13')],
+    ])
     ->push('Gin', Knowledge::LEVEL_BEGINNER, [
         [dateToYearFloat('2025-03-28')],
     ]);
