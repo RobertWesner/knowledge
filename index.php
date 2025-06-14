@@ -84,7 +84,7 @@ $knowledgeCollections[] = (new KnowledgeCollection('programming_language', 'Prog
         [dateToYearFloat('2024-12-30'), dateToYearFloat('2024-12-30')],
     ])
     ->push('Go', Knowledge::LEVEL_PROFICIENT, [
-        [dateToYearFloat('2025-03-07')],
+        [dateToYearFloat('2025-03-07'), 2025.45],
     ]);
 
 /*
@@ -110,7 +110,7 @@ $knowledgeCollections[] = (new KnowledgeCollection('lib', 'Frameworks, libraries
     ])
     ->push('React', Knowledge::LEVEL_BEGINNER, [
         [2021.2, 2021.85],
-        [dateToYearFloat('2025-04-05')]
+        [dateToYearFloat('2025-04-05'), 2025.45]
     ])
     ->push('MongoDB', Knowledge::LEVEL_BEGINNER, [
         [2022.2, 2022.4],
@@ -141,7 +141,7 @@ $knowledgeCollections[] = (new KnowledgeCollection('lib', 'Frameworks, libraries
         [dateToYearFloat('2024-12-13')],
     ])
     ->push('Gin', Knowledge::LEVEL_BEGINNER, [
-        [dateToYearFloat('2025-03-28')],
+        [dateToYearFloat('2025-03-28'), 2025.45],
     ]);
 
 $knowledgeCollections[] = (new KnowledgeCollection('ide', 'IDEs'))
@@ -178,9 +178,10 @@ $knowledgeCollections[] = (new KnowledgeCollection('tool', 'Tools and other Soft
     ])
     ->push('FreeCAD', Knowledge::LEVEL_BEGINNER, [
         [dateToYearFloat('2023-07-06'), 2024.5],
+        [dateToYearFloat('2025-06-10')],
     ])
     ->push('Gradle', Knowledge::LEVEL_BASIC, [
-        [dateToYearFloat('2024-12-30'), dateToYearFloat('2024-12-30')],
+        [dateToYearFloat('2024-12-30')]
     ]);
 
 $knowledgeCollections[] = (new KnowledgeCollection('os', 'Operating Systems'))
