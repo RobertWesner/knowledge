@@ -18,18 +18,28 @@ $knowledgeCollections = [];
 /*
  * THE "ROADMAP" (aka. things that might be fun to learn and possibly useful)
  *
- *  Interested in:
- *      Functional programming without a clear project goal:
- *          - Erlang
- *          - Elixir
- *          - Haskell
+ *  Functional programming without a clear project goal:
+ *      - Erlang
+ *      - Elixir
+ *      - Haskell
+ *      - PureScript ;)
  *
  *  Compiled general purpose:
  *      - Zig (the "better" C)?
  *
- *   WebAssembly:
+ *  Cross platform GUI:
+ *      - Dart with Flutter
+ *      - C# with Eto
+ *      - Kotlin with Compose
+ *      - Go with Wails
+ *      - Electron and/or Tauri
+ *
+ *  WebAssembly:
  *      - Rust (again)
  *      - Kotlin (again)
+ *
+ *  OSDev:
+ *      - Rust (https://os.phil-opp.com/)
  *
  *  Personal hell:
  *      - COBOL
