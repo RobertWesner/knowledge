@@ -74,6 +74,7 @@ $knowledgeCollections[] = (new KnowledgeCollection('programming_language', 'Prog
     ])
     ->push('Typescript', Knowledge::LEVEL_PROFICIENT, [
         [2020, 2023.3],
+        [dateToYearFloat('2025-07-12')],
     ])
     ->push('NASM - x86 Assembly', Knowledge::LEVEL_BASIC, [
         [2020.2, 2020.3],
@@ -99,7 +100,6 @@ $knowledgeCollections[] = (new KnowledgeCollection('programming_language', 'Prog
 
 /*
  * Svelte sounds like fun.
- * Might want to brush up on my React.
  */
 $knowledgeCollections[] = (new KnowledgeCollection('lib', 'Frameworks, libraries, and everything in between'))
     ->push('Löve 2D', Knowledge::LEVEL_BEGINNER, [
@@ -120,7 +120,7 @@ $knowledgeCollections[] = (new KnowledgeCollection('lib', 'Frameworks, libraries
     ])
     ->push('React', Knowledge::LEVEL_BEGINNER, [
         [2021.2, 2021.85],
-        [dateToYearFloat('2025-04-05'), 2025.45]
+        [dateToYearFloat('2025-04-05')],
     ])
     ->push('MongoDB', Knowledge::LEVEL_BEGINNER, [
         [2022.2, 2022.4],
@@ -152,6 +152,9 @@ $knowledgeCollections[] = (new KnowledgeCollection('lib', 'Frameworks, libraries
     ])
     ->push('Gin', Knowledge::LEVEL_BEGINNER, [
         [dateToYearFloat('2025-03-28'), 2025.45],
+    ])
+    ->push('React Native', Knowledge::LEVEL_BEGINNER, [
+        [dateToYearFloat('2025-07-12')],
     ]);
 
 $knowledgeCollections[] = (new KnowledgeCollection('ide', 'IDEs'))
