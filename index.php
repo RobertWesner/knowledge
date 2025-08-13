@@ -95,7 +95,8 @@ $knowledgeCollections[] = (new KnowledgeCollection('programming_language', 'Prog
         [dateToYearFloat('2024-12-30'), dateToYearFloat('2024-12-30')],
     ])
     ->push('Go', Knowledge::LEVEL_PROFICIENT, [
-        [dateToYearFloat('2025-03-07'), 2025.45],
+        // started writing go at work/besides privately on: 2025-07-25
+        [dateToYearFloat('2025-03-07')],
     ]);
 
 /*
@@ -128,18 +129,6 @@ $knowledgeCollections[] = (new KnowledgeCollection('lib', 'Frameworks, libraries
     ->push('Hybrids', Knowledge::LEVEL_PROFICIENT, [
         [2022.85, 2023.15],
         [dateToYearFloat('2024-10-27')],
-    ])
-    ->push('Node.js', Knowledge::LEVEL_BEGINNER, [
-        [2023.5, 2023.6],
-        [2024.7, 2024.8],
-    ])
-    ->push('Express', Knowledge::LEVEL_BEGINNER, [
-        [2023.5, 2023.6],
-        [2024.7, 2024.8],
-    ])
-    ->push('EJS', Knowledge::LEVEL_BEGINNER, [
-        [2023.5, 2023.6],
-        [2024.7, 2024.8],
     ])
     ->push('Laravel', Knowledge::LEVEL_BEGINNER, [
         [2024.55, 2024.75],
