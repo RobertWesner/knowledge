@@ -12,9 +12,9 @@ final class KnowledgeCollection
         private readonly string $name,
     ) {}
 
-    public function push(string $name, string $level, array $ranges): self
+    public function push(string $name, string $level, array $ranges, string $cssClass = ''): self
     {
-        $this->collection[] = new Knowledge($name, $level, $ranges);
+        $this->collection[] = new Knowledge($name, $level, $ranges, $cssClass);
 
         return $this;
     }

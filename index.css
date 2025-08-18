@@ -3,29 +3,30 @@
     src: url(./font/Ubuntu-R.ttf);
 }
 
+* {
+    box-sizing: border-box;
+}
+
 body {
     font-family: Ubuntu, Arial, sans-serif;
     color: #fefaff;
-    background-color: #252229;
+    background-color: #171618;
     margin: 0;
-    min-height: 100vh;
+    height: 100vh;
     display: flex;
     flex-direction: column;
 }
 
 main {
     flex-grow: 1;
+    overflow-y: scroll;
 }
 
 footer {
     color: #c6c4c6;
-    background-color: #1c1b1c;
+    background-color: #211f24;
     text-align: center;
     padding: 1em;
-}
-
-* {
-    box-sizing: border-box;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -45,7 +46,6 @@ p {
 
 .timeline {
     --max-range: calc(var(--max) - var(--min));
-    border-spacing: 0;
     width: 100%;
 }
 
@@ -95,7 +95,8 @@ p {
     top: 50%;
     transform: translateY(-50%);
     height: 1em;
-    left: calc((var(--from) - var(--min)) / var(--max-range) * 100%);
+    --calc-from: var(--from);
+    left: calc((var(--calc-from) - var(--min)) / var(--max-range) * 100%);
     width: calc((var(--to) - var(--from)) / var(--max-range) * 100%);
 
     border-radius: 0.2em;
@@ -109,15 +110,12 @@ p {
 .timespan.level-basic, .timespan.level-basic::after {
     background-color: #848484;
 }
-
 .timespan.level-beginner, .timespan.level-beginner::after {
     background-color: #abcda3;
 }
-
 .timespan.level-proficient {
     background: linear-gradient(90deg, #8eca83 0%, #5eec44 60%);
 }
-
 .timespan.level-proficient::after {
     background-color: #5eec44;
 }
@@ -147,36 +145,137 @@ p {
     animation-fill-mode: forwards;
     animation-timing-function: linear;
 }
-
 .timespan.level-expert::after {
     background: repeating-linear-gradient(-45deg, #ad58ec 0%, #e7449d 35%, #e7449d 50%, #bd36e4 70%, #ad58ec 90%);
     animation-timing-function: linear;
 }
 
+.timespan.current::after {
+    content: '\00a0';
+    display: inline-block;
+    position: absolute;
+    border-radius: 0;
+    left: calc(100%);
+    top: 0;
+    height: 1em;
+    width: 1em;
+    opacity: 50%;
+    clip-path: polygon(
+            0% 0%,
+            0% 100%,
+            50% 100%,
+            100% 75%,
+            100% 25%,
+            50% 0%
+    );
+}
+
+#options {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.52rem;
+    background: #211f24;
+    padding: 1rem;
+    text-align: center;
+}
+
+#options > .option {
+    background: #362f3f;
+    padding: 0.64rem;
+    border-radius: 1rem;
+}
+
+body:has(#relevant-option:checked) .irrelevant {
+    display: none;
+}
+body:has(#relevant-option:checked) .timeline {
+    --min: 2018 !important;
+}
+body:has(#relevant-option:checked) .timespan {
+    --calc-from: max(var(--from), 2018) !important;
+    width: calc((var(--to) - max(var(--from), var(--calc-from))) / var(--max-range) * 100%);
+}
+
+body:has(#timeline-option:checked) #raw {
+    display: none;
+}
+body:not(:has(#timeline-option:checked)) #fancy {
+    display: none;
+}
+
+.timeline-table {
+    width: 100%;
+    background: #211f24;
+    border-radius: 1rem;
+    border-spacing: 0;
+}
+
+.timeline-table tr th, .timeline-table tr td {
+    padding: 1rem;
+}
+
+.timeline-table > tbody > tr:nth-child(2n) {
+    background: #242228;
+}
+
+.timeline-table > thead > tr > th:last-of-type {
+    width: 100%;
+}
+
+.timeline-table .level-basic {
+    color: #d6d6d6;
+}
+.timeline-table .level-beginner {
+    color: #abcda3;
+}
+.timeline-table .level-proficient {
+    color: #5eec44;
+}
+.timeline-table .level-expert {
+    color: #ad58ec;
+}
+
+.timeline-table .timeframes .now {
+    color: #00ff08;
+    font-weight: bolder;
+}
+
+.timeline-table .timeframes .years[data-years="0"] {
+    color: #d4ca88;
+}
+.timeline-table .timeframes .years[data-years="1"] {
+    color: #bbd380;
+}
+.timeline-table .timeframes .years[data-years="2"] {
+    color: #b7ff00;
+}
+.timeline-table .timeframes .years[data-years="3"], .timeline-table .timeframes .years[data-years="4"] {
+    color: #33ff00;
+}
+.timeline-table .timeframes .years[data-years="3"] {
+    color: #23aa00;
+}
+.timeline-table .timeframes .years[data-years="5"] {
+    color: #ad58ec;
+}
+
 @media only screen and (max-width: 600px) {
-    .timeline-container {
-        overflow: hidden;
+    main {
+        padding: 2rem;
+    }
+
+    #options > .option {
+        flex-direction: column;
     }
 }
 
 @media only screen and (min-width: 600px) {
-    .timespan.current::after {
-        content: '\00a0';
-        display: inline-block;
-        position: absolute;
-        border-radius: 0;
-        left: calc(100%);
-        top: 0;
-        height: 1em;
-        width: 1em;
-        opacity: 50%;
-        clip-path: polygon(
-                0% 0%,
-                0% 100%,
-                50% 100%,
-                100% 75%,
-                100% 25%,
-                50% 0%
-        );
+    #options {
+        position: fixed;
+        bottom: 5rem;
+        right: 1rem;
+        padding: 1rem;
+        border-radius: 1rem;
     }
 }

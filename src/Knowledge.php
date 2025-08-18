@@ -10,7 +10,8 @@ final class Knowledge
     public function __construct(
         private readonly string $name,
         private readonly string $level,
-        private array $ranges,
+        private readonly array  $ranges,
+        private readonly string $cssClass,
     ) {}
 
     public function getName(): string
@@ -29,5 +30,10 @@ final class Knowledge
     public function getRanges(): array
     {
         return $this->ranges;
+    }
+
+    public function getCssClass(): string
+    {
+        return $this->cssClass;
     }
 }

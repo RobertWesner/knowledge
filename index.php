@@ -12,6 +12,15 @@ function dateToYearFloat(string $date): float
     ) / 12;
 }
 
+function yearFloatToDate(?float $year): ?string
+{
+    if ($year === null) {
+        return null;
+    }
+
+    return DateTime::createFromFormat('!m', (int)((($year - floor($year)) * 12 + 1)))->format('F') . ' ' . floor($year);
+}
+
 $now = (float)date('Y') + ((float)date('n') - 1) / 12;
 $knowledgeCollections = [];
 
@@ -47,14 +56,14 @@ $knowledgeCollections = [];
 $knowledgeCollections[] = (new KnowledgeCollection('programming_language', 'Programming Languages'))
     ->push('Visual Basic .NET', Knowledge::LEVEL_BASIC, [
         [2014, 2015.5],
-    ])
+    ], 'irrelevant')
     ->push('Java', Knowledge::LEVEL_BEGINNER, [
         [2018.2, 2018.8],
         [2019.6, 2019.7],
         [dateToYearFloat('2024-12-13')],
     ])
-    ->push('C++', Knowledge::LEVEL_BEGINNER, [
-        [2019, 2019.5],
+    ->push('C++', Knowledge::LEVEL_BASIC, [
+        [2019, 2019.25],
         [2020, 2020.25],
         [dateToYearFloat('2024-10-30'), dateToYearFloat('2024-11-17')],
     ])
@@ -87,6 +96,7 @@ $knowledgeCollections[] = (new KnowledgeCollection('programming_language', 'Prog
     ])
     ->push('Rust', Knowledge::LEVEL_BASIC, [
         [dateToYearFloat('2024-10-17'), dateToYearFloat('2024-10-19')],
+        [dateToYearFloat('2025-08-18')],
     ])
     ->push('Ruby', Knowledge::LEVEL_BEGINNER, [
         [dateToYearFloat('2024-12-20'), dateToYearFloat('2025-03-02')],
@@ -95,8 +105,11 @@ $knowledgeCollections[] = (new KnowledgeCollection('programming_language', 'Prog
         [dateToYearFloat('2024-12-30'), dateToYearFloat('2024-12-30')],
     ])
     ->push('Go', Knowledge::LEVEL_PROFICIENT, [
-        // started writing go at work/besides privately on: 2025-07-25
+        // started writing go at work on: 2025-07-25
         [dateToYearFloat('2025-03-07')],
+    ])
+    ->push('C#', Knowledge::LEVEL_BEGINNER, [
+        [dateToYearFloat('2025-08-14')],
     ]);
 
 /*
@@ -109,7 +122,7 @@ $knowledgeCollections[] = (new KnowledgeCollection('lib', 'Frameworks, libraries
     ->push('Symfony1', Knowledge::LEVEL_PROFICIENT, [
         [2019.75, 2023.3],
     ])
-    ->push('jQuery', Knowledge::LEVEL_PROFICIENT, [
+    ->push('jQuery', Knowledge::LEVEL_BEGINNER, [
         [2019.75, 2023.3],
     ])
     ->push('Bootstrap', Knowledge::LEVEL_PROFICIENT, [
@@ -134,13 +147,13 @@ $knowledgeCollections[] = (new KnowledgeCollection('lib', 'Frameworks, libraries
         [2024.55, 2024.75],
     ])
     ->push('NativePHP', Knowledge::LEVEL_PROFICIENT, [
-        [2024.55],
+        [2024.55, 2025],
     ])
     ->push('Spring', Knowledge::LEVEL_BEGINNER, [
         [dateToYearFloat('2024-12-13')],
     ])
     ->push('Gin', Knowledge::LEVEL_BEGINNER, [
-        [dateToYearFloat('2025-03-28'), 2025.45],
+        [dateToYearFloat('2025-03-28')],
     ])
     ->push('React Native', Knowledge::LEVEL_BEGINNER, [
         [dateToYearFloat('2025-07-12')],
@@ -149,7 +162,7 @@ $knowledgeCollections[] = (new KnowledgeCollection('lib', 'Frameworks, libraries
 $knowledgeCollections[] = (new KnowledgeCollection('ide', 'IDEs'))
     ->push('Visual Studio 2010 Express', Knowledge::LEVEL_BASIC, [
         [2014, 2015.5],
-    ])
+    ], 'irrelevant')
     ->push('Eclipse', Knowledge::LEVEL_BEGINNER, [
         [2018.2, 2018.8],
         [2019.6, 2019.7],
@@ -227,7 +240,7 @@ ob_start();
 <html lang="en">
     <head>
         <title>Robert Wesner - Knowledge Base</title>
-        <link rel="stylesheet" href="./index.css">
+        <link rel="stylesheet" href="./index.css?v2">
         <meta name="viewport" content="width=device-width, initial-scale=1" />
     </head>
     <body>
@@ -239,28 +252,101 @@ ob_start();
             <p>
                 I have been a software developer since late 2019 and spend much of my time outside work honing these skills.
             </p>
-            <?php foreach ($knowledgeCollections as $collection): ?>
-                <div class="timeline-container">
-                    <h2><?= $collection->getName() ?></h2>
-                    <?php /* Not my actual birthdate in case anyone asks */ ?>
-                    <div class="timeline" style="--min: 2013; --max: <?= $now ?>">
-                        <?php foreach ($collection->getAll() as $knowledge): ?>
-                            <div class="timespan-container">
-                                <?php foreach ($knowledge->getRanges() as $range): ?>
-                                    <span class="timespan level-<?= $knowledge->getLevel() ?> <?= isset($range[1]) ? '' : 'current' ?>" style="--from: <?= $range[0] ?>; --to: <?= $range[1] ?? $now + 0.2 ?>;">
-                                    <img
-                                        src="./img/<?= $collection->getKey() ?>/<?= strtolower(preg_replace('/\W/', '', $knowledge->getName())) ?>.png"
-                                        title="<?= $knowledge->getName() ?>"
-                                        alt="<?= $knowledge->getName() ?>"
-                                    >
-                                </span>
-                                <?php endforeach; ?>
-                            </div>
-                        <?php endforeach; ?>
+            <section id="fancy">
+                <?php foreach ($knowledgeCollections as $collection): ?>
+                    <div class="timeline-container">
+                        <h2><?= $collection->getName() ?></h2>
+                        <?php /* Not my actual birthdate in case anyone asks */ ?>
+                        <div class="timeline" style="--min: 2013; --max: <?= $now ?>">
+                            <?php foreach ($collection->getAll() as $knowledge): ?>
+                                <div class="timespan-container <?= $knowledge->getCssClass() ?>">
+                                    <?php foreach ($knowledge->getRanges() as $range): ?>
+                                        <span class="timespan level-<?= $knowledge->getLevel() ?> <?= isset($range[1]) ? '' : 'current' ?>" style="--from: <?= $range[0] ?>; --to: <?= $range[1] ?? $now + 0.2 ?>;">
+                                        <img
+                                            src="./img/<?= $collection->getKey() ?>/<?= strtolower(preg_replace('/\W/', '', str_replace(['#', '+'], ['sharp', 'plus'], $knowledge->getName()))) ?>.png"
+                                            title="<?= $knowledge->getName() ?>"
+                                            alt="<?= $knowledge->getName() ?>"
+                                        >
+                                    </span>
+                                    <?php endforeach; ?>
+                                </div>
+                            <?php endforeach; ?>
+                        </div>
                     </div>
-                </div>
-            <?php endforeach; ?>
+                <?php endforeach; ?>
+            </section>
+            <section id="raw">
+                <?php foreach ($knowledgeCollections as $collection): ?>
+                    <div class="timeline-container">
+                        <h2><?= $collection->getName() ?></h2>
+                        <table class="timeline-table">
+                            <thead>
+                                <tr>
+                                    <th>Logo</th>
+                                    <th>Language</th>
+                                    <th>Proficiency</th>
+                                    <th>Information</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php foreach ($collection->getAll() as $knowledge): ?>
+                                    <tr class="<?= $knowledge->getCssClass() ?>">
+                                        <th>
+                                            <img
+                                                src="./img/<?= $collection->getKey() ?>/<?= strtolower(preg_replace('/\W/', '', str_replace(['#', '+'], ['sharp', 'plus'], $knowledge->getName()))) ?>.png"
+                                                title="<?= $knowledge->getName() ?>"
+                                                alt=""
+                                                width="80"
+                                            >
+                                        </th>
+                                        <td>
+                                            <?= $knowledge->getName() ?>
+                                        </td>
+                                        <td>
+                                            <span class="level-<?= $knowledge->getLevel() ?>">
+                                                <?= ucfirst($knowledge->getLevel()) ?>
+                                            </span>
+                                        </td>
+                                        <td class="timeframes">
+                                            <?php $sum = 0 ?>
+                                            <ul>
+                                                <?php foreach ($knowledge->getRanges() as $range): ?>
+                                                    <?php $sum += ($range[1] ?? dateToYearFloat('now')) - $range[0] ?>
+                                                    <li>
+                                                        <b><?= yearFloatToDate($range[0]) ?></b> to <b><?= yearFloatToDate($range[1]) ?? '<span class="now">now</span>' ?></b>
+                                                    </li>
+                                                <?php endforeach; ?>
+                                            </ul>
+                                            <div>
+                                                <?php $sum = round($sum); ?>
+                                                Worked
+                                                <b class="years" data-years="<?= min($sum, 5) ?>">
+                                                    <?php if ($sum == 0): ?>
+
+                                                    <?php else: ?>
+                                                        <?= $sum ?> year<?= $sum > 1 ? 's' : '' ?>
+                                                    <?php endif; ?>
+                                                </b>
+                                                with <?= $knowledge->getName() ?>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                <?php endforeach; ?>
+                            </tbody>
+                        </table>
+                    </div>
+                <?php endforeach; ?></section>
         </main>
+        <aside id="options">
+            <label class="option">
+                Only show relevant
+                <input id="relevant-option" type="checkbox" checked>
+            </label>
+            <label class="option">
+                Show timeline data
+                <input id="timeline-option" type="checkbox">
+            </label>
+        </aside>
         <footer>
             Generated on <?= date('Y-m-d') ?>
         </footer>
