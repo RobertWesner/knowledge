@@ -31,10 +31,12 @@ $knowledgeCollections = [];
  *      - Erlang
  *      - Elixir
  *      - Haskell
+ *      - OCaml
  *      - PureScript ;)
+ *      - Elm
  *
  *  Compiled general purpose:
- *      - Zig (the "better" C)?
+ *      - Zig (to learn "proper" memory safety)
  *
  *  Cross platform GUI:
  *      - Dart with Flutter
@@ -46,12 +48,26 @@ $knowledgeCollections = [];
  *  WebAssembly:
  *      - Rust (again)
  *      - Kotlin (again)
+ *      - C# (again again)
+ *
+ *  Lisp:
+ *      - CommonLisp
+ *      - Scheme
+ *      - Racket
+ *      - Clojure (JVM) [https://www.braveclojure.com/clojure-for-the-brave-and-true/]
  *
  *  OSDev:
- *      - Rust (https://os.phil-opp.com/)
+ *      - Rust [https://os.phil-opp.com/]
  *
- *  Personal hell:
- *      - COBOL
+ *  What even... how:
+ *      - Prolog
+ *
+ *  Kind of completely useless for me:
+ *      - COBOL (just COBOL, no mainframes, for the hell of it)
+ *      - Fortran (more like ForFun)
+ *      - Ada
+ *      - Pascal
+ *      - Delphi
 */
 $knowledgeCollections[] = (new KnowledgeCollection('programming_language', 'Programming Languages'))
     ->push('Visual Basic .NET', Knowledge::LEVEL_BASIC, [
@@ -240,7 +256,7 @@ ob_start();
 <html lang="en">
     <head>
         <title>Robert Wesner - Knowledge Base</title>
-        <link rel="stylesheet" href="./index.css?v2">
+        <link rel="stylesheet" href="./index.css?v3">
         <meta name="viewport" content="width=device-width, initial-scale=1" />
     </head>
     <body>
