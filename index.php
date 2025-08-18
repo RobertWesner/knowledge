@@ -337,9 +337,7 @@ ob_start();
                                                 <?php $sum = round($sum); ?>
                                                 Worked
                                                 <b class="years" data-years="<?= min($sum, 5) ?>">
-                                                    <?php if ($sum == 0): ?>
-
-                                                    <?php else: ?>
+                                                    <?php if ($sum != 0): ?>
                                                         <?= $sum ?> year<?= $sum > 1 ? 's' : '' ?>
                                                     <?php endif; ?>
                                                 </b>
