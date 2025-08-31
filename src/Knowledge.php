@@ -19,6 +19,11 @@ final class Knowledge
         return $this->name;
     }
 
+    public function getSanitizedName(): string
+    {
+        return strtolower(preg_replace('/\W/', '', str_replace(['#', '+'], ['sharp', 'plus'], $this->getName())));
+    }
+
     public function getLevel(): string
     {
         return $this->level;
@@ -30,6 +35,19 @@ final class Knowledge
     public function getRanges(): array
     {
         return $this->ranges;
+    }
+
+    public function getYears(): float
+    {
+        return round(
+            array_sum(
+                array_map(
+                    fn (array $range): float => ($range[1] ?? dateToYearFloat('now')) - $range[0],
+                    $this->getRanges(),
+                ),
+            ),
+            1,
+        );
     }
 
     public function getCssClass(): string
