@@ -110,6 +110,9 @@ $knowledgeCollections[] = (new KnowledgeCollection('programming_language', 'Prog
     ])
     ->push('C#', Knowledge::LEVEL_BEGINNER, [
         [dateToYearFloat('2025-08-14')],
+    ])
+    ->push('C', Knowledge::LEVEL_BEGINNER, [
+        [dateToYearFloat('2025-08-22')],
     ]);
 
 /*
