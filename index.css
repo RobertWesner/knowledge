@@ -260,6 +260,11 @@ body:not(:has(#timeline-option:checked)) #fancy {
     color: #ad58ec;
 }
 
+#imprint a, #imprint a:visited {
+    color: rgba(201, 171, 248, 0.69);
+    text-decoration: none;
+}
+
 @media only screen and (max-width: 600px) {
     main {
         padding: 2rem;
@@ -276,6 +281,12 @@ body:not(:has(#timeline-option:checked)) #fancy {
     .timeline-table tr > :nth-child(2), .timeline-table tr > :nth-child(3) {
         display: none;
     }
+
+    #imprint {
+        display: flex;
+        flex-direction: column;
+        gap: 0.64rem;
+    }
 }
 
 @media only screen and (min-width: 600px) {
@@ -285,5 +296,13 @@ body:not(:has(#timeline-option:checked)) #fancy {
         right: 1rem;
         padding: 1rem;
         border-radius: 1rem;
+    }
+
+    #imprint > div {
+        display: inline-block;
+    }
+
+    #imprint > div:first-child::after {
+        content: ' - ';
     }
 }

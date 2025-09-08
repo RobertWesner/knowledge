@@ -9,11 +9,12 @@ $knowledgeCollections = require __DIR__ . '/../config/knowledge.php';
 
 ob_start();
 ?>
+<!-- Generated on <?= date('Y-m-d') ?> -->
 <!doctype html>
 <html lang="en">
     <head>
         <title>Robert Wesner - Knowledge Base</title>
-        <link rel="stylesheet" href="index.css?v3">
+        <link rel="stylesheet" href="index.css?v4">
         <meta name="viewport" content="width=device-width, initial-scale=1" />
     </head>
     <body>
@@ -104,7 +105,8 @@ ob_start();
                             </tbody>
                         </table>
                     </div>
-                <?php endforeach; ?></section>
+                <?php endforeach; ?>
+            </section>
         </main>
         <aside id="options">
             <label class="option">
@@ -117,7 +119,26 @@ ob_start();
             </label>
         </aside>
         <footer>
-            Generated on <?= date('Y-m-d') ?>
+            <div id="imprint">
+                <div>
+                    <a href="https://datenschutz.robertwesner.de/datenschutzerklaerung" target="_blank">
+                        Datenschutzerklärung
+                    </a>
+                    &dash;
+                    <a href="https://datenschutz.robertwesner.de/dataprotection" target="_blank">
+                        Data protection
+                    </a>
+                </div>
+                <div>
+                    <a href="https://datenschutz.robertwesner.de/impressum" target="_blank">
+                        Impressum
+                    </a>
+                    &dash;
+                    <a href="https://datenschutz.robertwesner.de/impressum" target="_blank">
+                        Imprint
+                    </a>
+                </div>
+            </div>
         </footer>
     </body>
 </html>
