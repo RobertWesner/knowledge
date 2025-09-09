@@ -12,7 +12,7 @@ $knowledgeCollections = [];
  *      - Elixir
  *      - Haskell
  *      - OCaml
- *      - PureScript ;)
+ *      - PureScript
  *      - Elm
  *      - Scala (JVM)
  *
@@ -44,6 +44,13 @@ $knowledgeCollections = [];
  *
  *  What even... how:
  *      - Prolog
+ *
+ *  The "maybe" category:
+ *      - Gleam
+ *      - D (It's like C++ but actually incremented, get it?)
+ *      - V (should have great C interop)
+ *      - Crystal (similar to Ruby)
+ *      - Arturo (Scripting language that "runs everywhere" and "can do anything" supposedly)
  *
  *  Kind of completely useless for me:
  *      - COBOL (just COBOL, no mainframes, for the hell of it)
