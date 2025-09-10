@@ -8,12 +8,12 @@ $knowledgeCollections = [];
  * THE "ROADMAP" (aka. things that might be fun to learn and possibly useful)
  *
  *  Functional programming without a clear project goal:
+ *      - Haskell (looks like the most functional of all them functionals with no compromises or something)
  *      - Erlang
  *      - Elixir
- *      - Haskell
  *      - OCaml
  *      - PureScript
- *      - Elm
+ *      - Elm (basically its own framework baked-in for frontend dev and "doesnt have runtime exceptions")
  *      - Scala (JVM)
  *
  *  Compiled general purpose:
@@ -90,13 +90,13 @@ $knowledgeCollections[] = (new KnowledgeCollection('programming_language', 'Prog
     ])
     ->push('Typescript', Knowledge::LEVEL_PROFICIENT, [
         [2020, 2023.3],
-        [dateToYearFloat('2025-07-12')],
+        [dateToYearFloat('2025-07-12'), dateToYearFloat('2025-08-01')],
     ])
     ->push('NASM - x86 Assembly', Knowledge::LEVEL_BASIC, [
         [2020.2, 2020.3],
         [2023.1, 2023.2],
         [dateToYearFloat('2024-10-30'), dateToYearFloat('2024-12-07')],
-    ]) // on and off, not sure of the range... it's guesstimated
+    ])
     ->push('Python', Knowledge::LEVEL_BEGINNER, [
         [2020.4, 2021.5],
         [2024, dateToYearFloat('2024-03-26')],
@@ -145,14 +145,14 @@ $knowledgeCollections[] = (new KnowledgeCollection('lib', 'Frameworks, libraries
     ])
     ->push('React', Knowledge::LEVEL_BEGINNER, [
         [2021.2, 2021.85],
-        [dateToYearFloat('2025-04-05')],
+        [dateToYearFloat('2025-04-05'), dateToYearFloat('2025-08-01')],
     ])
     ->push('MongoDB', Knowledge::LEVEL_BEGINNER, [
         [2022.2, 2022.4],
     ])
     ->push('Hybrids', Knowledge::LEVEL_PROFICIENT, [
         [2022.85, 2023.15],
-        [dateToYearFloat('2024-10-27')],
+        [dateToYearFloat('2024-10-27'), dateToYearFloat('2025-07-21')],
     ])
     ->push('Laravel', Knowledge::LEVEL_BEGINNER, [
         [2024.55, 2024.75],
@@ -167,7 +167,7 @@ $knowledgeCollections[] = (new KnowledgeCollection('lib', 'Frameworks, libraries
         [dateToYearFloat('2025-03-28')],
     ])
     ->push('React Native', Knowledge::LEVEL_BEGINNER, [
-        [dateToYearFloat('2025-07-12')],
+        [dateToYearFloat('2025-07-12'), dateToYearFloat('2025-08-01')],
     ]);
 
 $knowledgeCollections[] = (new KnowledgeCollection('ide', 'IDEs'))
