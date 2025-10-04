@@ -103,7 +103,7 @@ $knowledgeCollections[] = (new KnowledgeCollection('programming_language', 'Prog
     ])
     ->push('Rust', Knowledge::LEVEL_BEGINNER, [
         [dateToYearFloat('2024-10-17'), dateToYearFloat('2024-10-19')],
-        [dateToYearFloat('2025-08-18')],
+        [dateToYearFloat('2025-08-18'), dateToYearFloat('2025-09-01')],
     ])
     ->push('Ruby', Knowledge::LEVEL_BEGINNER, [
         [dateToYearFloat('2024-12-20'), dateToYearFloat('2025-03-02')],
@@ -116,10 +116,10 @@ $knowledgeCollections[] = (new KnowledgeCollection('programming_language', 'Prog
         [dateToYearFloat('2025-03-07')],
     ])
     ->push('C#', Knowledge::LEVEL_BEGINNER, [
-        [dateToYearFloat('2025-08-14')],
+        [dateToYearFloat('2025-08-14'), dateToYearFloat('2025-09-01')],
     ])
     ->push('C', Knowledge::LEVEL_BEGINNER, [
-        [dateToYearFloat('2025-08-22')],
+        [dateToYearFloat('2025-08-22'), dateToYearFloat('2025-09-09')],
     ]);
 
 /*
