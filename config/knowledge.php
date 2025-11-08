@@ -10,7 +10,7 @@ $knowledgeCollections = [];
  *  Functional programming without a clear project goal:
  *      - Haskell (looks like the most functional of all them functionals with no compromises or something)
  *      - Erlang
- *      - Elixir
+ *      - Elixir (erlang, but with ruby-like syntax, which is awesome)
  *      - OCaml
  *      - PureScript
  *      - Elm (basically its own framework baked-in for frontend dev and "doesnt have runtime exceptions")
@@ -49,7 +49,7 @@ $knowledgeCollections = [];
  *      - Gleam
  *      - D (It's like C++ but actually incremented, get it?)
  *      - V (should have great C interop)
- *      - Crystal (similar to Ruby)
+ *      - Crystal (ruby-like syntax!)
  *      - Arturo (Scripting language that "runs everywhere" and "can do anything" supposedly)
  *
  *  Kind of completely useless for me:
@@ -108,8 +108,9 @@ $knowledgeCollections[] = (new KnowledgeCollection('programming_language', 'Prog
     ->push('Ruby', Knowledge::LEVEL_BEGINNER, [
         [dateToYearFloat('2024-12-20'), dateToYearFloat('2025-03-02')],
     ])
-    ->push('Kotlin', Knowledge::LEVEL_BASIC, [
+    ->push('Kotlin', Knowledge::LEVEL_PROFICIENT, [
         [dateToYearFloat('2024-12-30'), dateToYearFloat('2024-12-30')],
+        [dateToYearFloat('2025-10-08')],
     ])
     ->push('Go', Knowledge::LEVEL_PROFICIENT, [
         // started writing go at work on: 2025-07-25
