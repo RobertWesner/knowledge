@@ -15,6 +15,7 @@ $knowledgeCollections = [];
  *      - PureScript
  *      - Elm (basically its own framework baked-in for frontend dev and "doesnt have runtime exceptions")
  *      - Scala (JVM)
+ *      - Gleam
  *
  *  Compiled general purpose:
  *      - Zig (to learn "proper" memory safety)
@@ -46,7 +47,6 @@ $knowledgeCollections = [];
  *      - Prolog
  *
  *  The "maybe" category:
- *      - Gleam
  *      - D (It's like C++ but actually incremented, get it?)
  *      - V (should have great C interop)
  *      - Crystal (ruby-like syntax!)
@@ -197,6 +197,12 @@ $knowledgeCollections[] = (new KnowledgeCollection('tool', 'Tools and other Soft
     ->push('VirtualBox', Knowledge::LEVEL_PROFICIENT, [
         [2019.45, 2022],
     ])
+    ->push('apache', Knowledge::LEVEL_BASIC, [
+        [2019.45, 2019.8],
+    ])
+    ->push('nginx', Knowledge::LEVEL_PROFICIENT, [
+        [2019.8],
+    ])
     ->push('Docker', Knowledge::LEVEL_PROFICIENT, [
         [2022.1],
     ])
@@ -209,6 +215,9 @@ $knowledgeCollections[] = (new KnowledgeCollection('tool', 'Tools and other Soft
     ])
     ->push('Gradle', Knowledge::LEVEL_BASIC, [
         [dateToYearFloat('2024-12-30')]
+    ])
+    ->push('rabbitmq', Knowledge::LEVEL_BEGINNER, [
+        [dateToYearFloat('2025-11-10')],
     ]);
 
 $knowledgeCollections[] = (new KnowledgeCollection('os', 'Operating Systems'))

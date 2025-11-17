@@ -14,18 +14,41 @@ ob_start();
 <html lang="en">
     <head>
         <title>Robert Wesner - Knowledge Base</title>
-        <link rel="stylesheet" href="index.css?v4">
+        <link rel="stylesheet" href="index.css?v5">
         <meta name="viewport" content="width=device-width, initial-scale=1" />
     </head>
     <body>
         <main>
             <h1>Robert Wesner - Knowledge</h1>
-            <p>
-                This is a collection of my experience with software development and more.
-            </p>
-            <p>
-                I have been a software developer since late 2019 and spend much of my time outside work honing these skills.
-            </p>
+            <section id="general">
+                <p>
+                    This is a collection of my experience with software development and more.
+                </p>
+                <p>
+                    I have been a software developer since late 2019 and spend much of my time outside work honing these skills.
+                </p>
+                <div>
+                    My preferred technology stack consists of:
+                    <ul>
+                        <li>
+                            <?= InlineLogo::img('programming_language/php') ?> PHP8
+                            (<?= InlineLogo::img('lib/symfony') ?>  Symfony,
+                            <a href="https://github.com/RobertWesner/simple-mvc-php">my own framework</a>),
+                        </li>
+                        <li>
+                            <?= InlineLogo::img('programming_language/go') ?> Go
+                            (<?= InlineLogo::img('lib/gin') ?> Gin),
+                        </li>
+                        <li>
+                            <?= InlineLogo::img('programming_language/kotlin') ?>Kotlin,
+                        </li>
+                        <li>
+                            <?= InlineLogo::img('programming_language/javascript') ?> JavaScript
+                            (<?= InlineLogo::img('lib/react') ?> React).
+                        </li>
+                    </ul>
+                </div>
+            </section>
             <section id="fancy">
                 <?php foreach ($knowledgeCollections as $collection): ?>
                     <div class="timeline-container">

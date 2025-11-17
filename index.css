@@ -22,6 +22,10 @@ main {
     overflow-y: scroll;
 }
 
+main:has(.timeline-container:hover) + aside {
+    opacity: 0.6;
+}
+
 footer {
     color: #c6c4c6;
     background-color: #211f24;
@@ -33,10 +37,14 @@ h1, h2, h3, h4, h5, h6 {
     text-align: center;
 }
 
-p {
+#general > * {
     max-width: 600px;
     margin: auto;
     padding: 0.2em;
+}
+
+#general a, #general a:visited {
+    color: #7adeff;
 }
 
 .timeline-container {
@@ -287,6 +295,10 @@ body:not(:has(#timeline-option:checked)) #fancy {
         flex-direction: column;
         gap: 0.64rem;
     }
+}
+
+.h-1em {
+    height: 1em;
 }
 
 @media only screen and (min-width: 600px) {
