@@ -121,6 +121,9 @@ $knowledgeCollections[] = (new KnowledgeCollection('programming_language', 'Prog
     ])
     ->push('C', Knowledge::LEVEL_BEGINNER, [
         [dateToYearFloat('2025-08-22'), dateToYearFloat('2025-09-09')],
+    ])
+    ->push('Purescript', Knowledge::LEVEL_BEGINNER, [
+        [dateToYearFloat('2025-11-15')]
     ]);
 
 /*
@@ -169,6 +172,9 @@ $knowledgeCollections[] = (new KnowledgeCollection('lib', 'Frameworks, libraries
     ])
     ->push('React Native', Knowledge::LEVEL_BEGINNER, [
         [dateToYearFloat('2025-07-12'), dateToYearFloat('2025-08-01')],
+    ])
+    ->push('Puppeteer', Knowledge::LEVEL_BEGINNER, [
+        [dateToYearFloat('2025-11-15')]
     ]);
 
 $knowledgeCollections[] = (new KnowledgeCollection('ide', 'IDEs'))
